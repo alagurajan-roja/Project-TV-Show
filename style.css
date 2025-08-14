@@ -1,3 +1,78 @@
 #root {
-  color: red;
+  color: black;
+}
+/* General page styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Container for episode cards */
+.episodes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 1rem 2rem;
+}
+
+/* Episode card */
+.episode-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 280px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Episode image */
+.episode-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Episode title */
+.episode-card h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem;
+}
+
+/* Summary text */
+.summary {
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+  flex-grow: 1;
+  color: #555;
+}
+
+/* TVMaze link */
+.episode-card a {
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  background: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.episode-card a:hover {
+  background: #005fa3;
+}
+
+/* Attribution text */
+.credit {
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 1rem 0;
 }
