@@ -5,7 +5,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f4f4f4;
+  background: #e8c8c8;
   color: #333;
 }
 
@@ -18,7 +18,7 @@ h1 {
 .episodes-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   padding: 0 1rem 2rem;
 }
@@ -50,7 +50,7 @@ h1 {
 /* Summary text */
 .summary {
   font-size: 0.9rem;
-  padding: 0 0.5rem;
+  padding: 0 0.9rem;
   flex-grow: 1;
   color: #555;
 }
@@ -67,7 +67,7 @@ h1 {
 }
 
 .episode-card a:hover {
-  background: #005fa3;
+  background: #6fb4e5;
 }
 
 /* Attribution text */
