@@ -15,21 +15,41 @@ h1 {
   padding: 1rem;
 }
 
-/* Search and selector container */
+/* Controls wrapper (show selector, search, episode selector) */
 .controls {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem;
 }
 
+.controls label {
+  font-size: 0.9rem;
+}
+
+/* inputs/selects in controls */
 .controls input,
 .controls select {
   padding: 0.5rem;
   font-size: 0.9rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+/* Loading & error */
+.loading,
+.error {
+  text-align: center;
+  grid-column: 1 / -1;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.error {
+  color: #b00020;
 }
 
 /* Container for episode cards */
@@ -73,7 +93,7 @@ h1 {
   color: #555;
 }
 
-/* TVMaze link */
+/* TVMaze link (at bottom of card) */
 .episode-card a {
   display: block;
   text-align: center;
@@ -100,4 +120,6 @@ h1 {
   text-align: center;
   margin-bottom: 0.5rem;
   font-weight: bold;
+  width: 100%;
+  grid-column: 1 / -1;
 }
