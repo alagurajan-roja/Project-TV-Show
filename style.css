@@ -1,125 +1,166 @@
-#root {
-  color: black;
-}
-
-/* General page styles */
+/* === General Reset === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #e8c8c8;
+  padding: 0;
+  background: #c7c4a6;
   color: #333;
 }
 
 h1 {
   text-align: center;
-  padding: 1rem;
-}
-
-/* Controls wrapper (show selector, search, episode selector) */
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.controls label {
-  font-size: 0.9rem;
-}
-
-/* inputs/selects in controls */
-.controls input,
-.controls select {
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-/* Loading & error */
-.loading,
-.error {
-  text-align: center;
-  grid-column: 1 / -1;
-  font-weight: bold;
-  margin: 1rem;
-}
-
-.error {
-  color: #b00020;
-}
-
-/* Container for episode cards */
-.episodes-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  padding: 0 1rem 2rem;
-}
-
-/* Episode card */
-.episode-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  width: 280px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Episode image */
-.episode-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Episode title */
-.episode-card h2 {
-  font-size: 1.1rem;
-  margin: 0.5rem;
-}
-
-/* Summary text */
-.summary {
-  font-size: 0.9rem;
-  padding: 0 0.9rem;
-  flex-grow: 1;
-  color: #555;
-}
-
-/* TVMaze link (at bottom of card) */
-.episode-card a {
-  display: block;
-  text-align: center;
-  padding: 0.5rem;
-  background: #0077cc;
-  color: white;
-  text-decoration: none;
-  border-radius: 0 0 10px 10px;
-}
-
-.episode-card a:hover {
-  background: #6fb4e5;
-}
-
-/* Attribution text */
-.credit {
-  text-align: center;
-  font-size: 0.85rem;
   margin: 1rem 0;
 }
 
-/* Search results counter */
-.results-count {
-  text-align: center;
-  margin-bottom: 0.5rem;
+h2 {
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Controls Bar === */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.controls input[type="text"],
+.controls select {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#results-count,
+#episode-count {
   font-weight: bold;
+  color: #444;
+}
+
+/* === Highlighted Matches === */
+.highlight {
+  background: #ffb6c1;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* === Shows Layout === */
+.shows-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.show-card {
+  display: grid;
+  grid-template-columns: 150px 1fr 200px;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  align-items: start;
+}
+
+.show-card img {
   width: 100%;
-  grid-column: 1 / -1;
+  border-radius: 8px;
+}
+
+.show-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.show-summary {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.show-info-panel {
+  font-size: 0.85rem;
+  color: #444;
+  background: #fafafa;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.show-info-panel p {
+  margin: 0.3rem 0;
+}
+
+/* === Episodes Layout === */
+.episodes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.episode-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.episode-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.summary {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* === Utility === */
+.error {
+  text-align: center;
+  color: #c00;
+  font-weight: bold;
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  margin: 1rem;
+}
+
+.nav-link {
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #0077cc;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.credit {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.8rem;
+  color: #555;
 }
