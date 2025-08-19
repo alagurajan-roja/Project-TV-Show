@@ -3,16 +3,42 @@ function pad2(num) {
   return String(num).padStart(2, "0");
 }
 
-window.onload = setup;
+// Global storage for episodes
+window.allEpisodes = [];
+
+// Fetch episodes on load instead of getAllEpisodes()
+window.onload = fetchEpisodes;
+
+async function fetchEpisodes() {
+  const root = document.getElementById("root");
+
+  // Show loading state
+  root.innerHTML = "<p>Loading episodes, please wait...</p>";
+
+  try {
+    const response = await fetch("https://api.tvmaze.com/shows/82/episodes");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    // Save fetched episodes globally
+    window.allEpisodes = await response.json();
+
+    // Clear loading message
+    root.innerHTML = "";
+
+    // Continue as before
+    setup();
+
+  } catch (error) {
+    root.innerHTML = `<p style="color: red;">⚠️ Failed to load episodes. Please try again later.</p>`;
+    console.error("Error fetching episodes:", error);
+  }
+}
 
 function setup() {
-  const allEpisodes = getAllEpisodes();
-
-  // Store original episodes
-  window.allEpisodes = allEpisodes;
-
   createControls();
-  displayEpisodes(allEpisodes);
+  displayEpisodes(window.allEpisodes);
 }
 
 function createControls() {
