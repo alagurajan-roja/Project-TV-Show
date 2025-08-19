@@ -1,3 +1,166 @@
-#root {
-  color: red;
+/* === General Reset === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #c7c4a6;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+h2 {
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Controls Bar === */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.controls input[type="text"],
+.controls select {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#results-count,
+#episode-count {
+  font-weight: bold;
+  color: #444;
+}
+
+/* === Highlighted Matches === */
+.highlight {
+  background: #ffb6c1;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* === Shows Layout === */
+.shows-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.show-card {
+  display: grid;
+  grid-template-columns: 150px 1fr 200px;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  align-items: start;
+}
+
+.show-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.show-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.show-summary {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.show-info-panel {
+  font-size: 0.85rem;
+  color: #444;
+  background: #fafafa;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.show-info-panel p {
+  margin: 0.3rem 0;
+}
+
+/* === Episodes Layout === */
+.episodes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.episode-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.episode-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.summary {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* === Utility === */
+.error {
+  text-align: center;
+  color: #c00;
+  font-weight: bold;
+}
+
+.loading {
+  text-align: center;
+  font-style: italic;
+  margin: 1rem;
+}
+
+.nav-link {
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #0077cc;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.credit {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.8rem;
+  color: #555;
 }
